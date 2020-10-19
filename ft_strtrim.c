@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 18:46:03 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/10/19 02:41:55 by mmonereo         ###   ########.fr       */
+/*   Updated: 2020/10/19 16:52:18 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 		len = 0;
 	}
 	if (!(new = ft_sub_u(s1, i, len)))
-		return NULL;
+		return (NULL);
 	new[len] = 0;
 	return (new);
 }
