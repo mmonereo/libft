@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 17:04:50 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/09/17 17:33:28 by mmonereo         ###   ########.fr       */
+/*   Updated: 2020/10/19 00:51:11 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	x = 0;
 	if (size == 0)
 	{
-		return (strlen(src));
+		return (ft_strlen(src));
 	}
 	while (src[x] != '\0' && x < size - 1)
 	{
@@ -30,5 +30,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		++x;
 	}
 	dst[i] = '\0';
-	return (strlen(src));
+	return (ft_strlen(src));
 }

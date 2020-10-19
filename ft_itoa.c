@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 18:31:03 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/09/21 18:45:29 by mmonereo         ###   ########.fr       */
+/*   Updated: 2020/10/19 02:45:57 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static unsigned int	ft_numselect(int n, unsigned int *num)
 	if (n < 0)
 	{
 		*num = (unsigned int)(n * -1);
-		len = ft_numlen(*(num)) + 1;
+		len = ft_numlen(*(num));
+		len = len + 1;
 	}
 	else
 	{
@@ -50,7 +51,7 @@ char				*ft_itoa(int n)
 
 	num = n;
 	len = ft_numselect(n, &num);
-	if (!(res = (char *)malloc(sizeof(char) * len)))
+	if (!(res = (char *)malloc(sizeof(char) * len + 1)))
 	{
 		return (NULL);
 	}
@@ -58,7 +59,6 @@ char				*ft_itoa(int n)
 	{
 		res[0] = '-';
 	}
-	res[len] = '\0';
 	i = len - 1;
 	while (num >= 10)
 	{
@@ -67,5 +67,6 @@ char				*ft_itoa(int n)
 		i--;
 	}
 	res[i] = (char)(num + 48);
+	res[len] = '\0';
 	return (res);
 }

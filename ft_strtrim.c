@@ -6,11 +6,31 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 18:46:03 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/09/21 17:44:20 by mmonereo         ###   ########.fr       */
+/*   Updated: 2020/10/19 02:41:55 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char		*ft_sub_u(char const *s, unsigned int start, size_t len)
+{
+	unsigned int	i;
+	char			*new;
+
+	i = 0;
+	new = (char *)malloc(len * sizeof(char));
+	if (new == 0)
+	{
+		return (NULL);
+	}
+	while (i < start)
+	{
+		i++;
+	}
+	ft_memcpy(&new[0], &s[i], (len * sizeof(char)));
+	new[len] = '\0';
+	return (new);
+}
 
 static int		ft_inset(char c, char const *set)
 {
@@ -45,7 +65,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	{
 		len = 0;
 	}
-	new = ft_substr(s1, i, len);
+	if (!(new = ft_sub_u(s1, i, len)))
+		return NULL;
 	new[len] = 0;
 	return (new);
 }

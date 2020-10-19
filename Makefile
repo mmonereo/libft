@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/09/29 18:11:02 by mmonereo          #+#    #+#              #
-#    Updated: 2020/10/06 20:24:30 by mmonereo         ###   ########.fr        #
+#    Created: 2020/10/16 15:24:17 by mmonereo          #+#    #+#              #
+#    Updated: 2020/10/16 15:40:12 by mmonereo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,13 +31,16 @@ CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror 
 
+%.o: 			%.c
+				$(CC) $(CFLAGS) -c -o $@ $<
+
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
-bonus:	${OBJS} ${OBJSBONUS}
-		ar rcs ${NAME} ${OBJS} ${OBJSBONUS}
+bonus:			${OBJS} ${OBJSBONUS}
+				ar rcs ${NAME} ${OBJS} ${OBJSBONUS}
 
 clean:
 				$(RM) $(OBJS) ${OBJSBONUS}
