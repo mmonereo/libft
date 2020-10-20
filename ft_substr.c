@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 18:47:29 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/10/20 10:24:40 by mmonereo         ###   ########.fr       */
+/*   Updated: 2020/10/20 17:20:01 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start > ft_strlen(s))
 	{
 		new[0] = '\0';
-		return(new);
+		return (new);
 	}
 	ft_memcpy(&new[0], &s[i], (len * sizeof(char)));
 	new[len] = 0;
