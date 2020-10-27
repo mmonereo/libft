@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 18:42:16 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/10/27 16:29:10 by mmonereo         ###   ########.fr       */
+/*   Updated: 2020/10/27 16:31:44 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,7 @@ char			**ft_split(char const *s, char c)
 	len = 0;
 	i = 0;
 	j = 0;
-	if (s && *s)
-		wcount = ft_wordc(s, c);
-	else
-		wcount = 0;
+	wcount = ft_wordc(s, c);
 	if (!(newarr = (char **)malloc(sizeof(char *) * wcount + 1)))
 		return (NULL);
 	while (s[j] != 0 && wcount--)
